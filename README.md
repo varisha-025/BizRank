@@ -2,12 +2,26 @@
 
 A web application for rating the small businesses thriving across the internet. It also allows users to mark their favourite businesses, share them with their friends and family, enjoy the ongoing sale and set a reminder of the upcoming sale on their favourite brands.
 
+- [Tech stack](#Tech-stack)
+
+- [Want to contribute](#Want-to-contribute?)
+
+- [Standard Commit Message](#Standard-Commit-Messages)
+
+- [Before making PR](#Before-making-PR)
+
+- [Local Setup](#Local-Setup)
+
+- [Backend setup](#Backend-setup)
+
+- [Frontend setup](#Frontend-setup)
+
 ## Tech stack
 
 - **Frontend:** Single Page Application using [React](https://reactjs.org/)
 - **Server:** [Node.js](https://nodejs.org/en/) for the server.
-<!-- - **PullRequest validation:** [Github Actions](https://github.com/features/actions) to do automated PR validation by running tests and linter -->
-<!-- - **Version Control and Hosting:** [Git](https://git-scm.com/) for Source Code Management and [Github](https://github.com) for hosting. -->
+  <!-- - **PullRequest validation:** [Github Actions](https://github.com/features/actions) to do automated PR validation by running tests and linter -->
+  <!-- - **Version Control and Hosting:** [Git](https://git-scm.com/) for Source Code Management and [Github](https://github.com) for hosting. -->
 
 <!-- ## Prerequisites for Setup
 
@@ -62,4 +76,3 @@ commit messages are standardized:
 - Run `cd client`
 - Run `npm install` to install all dependencies.
 - Run `npm start` to start the server and visit [site](http://localhost:1337).
-
