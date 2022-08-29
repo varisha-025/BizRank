@@ -5,7 +5,6 @@ A web application for rating the small businesses thriving across the internet. 
 - [Tech stack](#Tech-stack)
 - [Want to contribute](#Want-to-contribute?)
 - [Standard Commit Messages](#Standard-Commit-Messages)
-- [Standard Commit Message](#Standard-Commit-Messages)
 - [Before making PR](#Before-making-PR)
 - [Local Setup](#Local-Setup)
 - [Backend setup](#Backend-setup)
