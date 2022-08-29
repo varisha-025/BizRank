@@ -1,28 +1,28 @@
-const express = require('express')
-const Seller = require('../models/seller.module')
-const Products = require('../models/product.module')
+const express = require('express');
+const Seller = require('../models/seller.module');
+const Products = require('../models/product.module');
 
-router = express.Router()
+const router = express.Router();
 
 // get all sellers
 router.get('/', async (req, res) => {
   try {
-    const sellers = await Seller.find()
-    return res.status(200).json(sellers)
+    const sellers = await Seller.find();
+    return res.status(200).json(sellers);
   } catch (error) {
-    res.status(404).json({error:error})
+    res.status(404).json({ error });
   }
-})
+});
 
-//get all the product catgories
+// get all the product catgories
 router.get('/products', async (req, res) => {
   try {
-    const products = await Products.find().sort({"title": 1})
-    return res.status(200).json(products)
+    const products = await Products.find().sort({ title: 1 });
+    return res.status(200).json(products);
   } catch (error) {
-    res.status(404).json({error:error})
+    res.status(404).json({ error });
   }
-})
+});
 
 // router.get('/:id/contact', async (req, res) => {
 //   try {
@@ -32,7 +32,6 @@ router.get('/products', async (req, res) => {
 //     res.status(404).json({error:error})
 //   }
 // })
-
 
 // get a single seller details
 router.get('/:id', async (req, res) => {
@@ -45,6 +44,6 @@ router.get('/:id', async (req, res) => {
       message: error.message,
     });
   }
-})
+});
 
-module.exports = router
+module.exports = router;
