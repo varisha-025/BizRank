@@ -50,7 +50,7 @@ commit messages are standardized:
 > Note: All the commits should be made from the root directory of the repository
 
 ### Before making PR
-
+- Run `npm run lint` for checking lint errors.
 - Run `git fetch upstream` & `git rebase upstream/master` to fetch updated codebase into your local repository before creating any new branch.
 - Run `git checkout -b <your-branch-name>`
 
