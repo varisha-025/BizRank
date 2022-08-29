@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "lint": "eslint --fix --ext .js,.jsx ."
   },
   "author": "",
   "license": "ISC",
@@ -27,5 +28,10 @@
     "nodemon": "^2.0.18",
     "passport": "^0.6.0",
     "passport-google-oauth": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
   }
 }

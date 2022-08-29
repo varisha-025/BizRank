@@ -1,9 +1,10 @@
-const express = require('express')
-const City = require('../models/city.module')
-const State = require('../models/state.module')
+const express = require('express');
+// const City = require('../models/city.module');
+const State = require('../models/state.module');
 
-router = express.Router()
+const router = express.Router();
 
+// eslint-disable-next-line no-unused-vars
 router.get('/cities', async (req, res) => {
   // try {
   //   const cities = await City.find().sort({ "label": 1 })
@@ -11,46 +12,46 @@ router.get('/cities', async (req, res) => {
   // } catch (error) {
   //   res.status(404).json({ error: error })
   // }
-  var headers = new Headers();
-  headers.append("X-CSCAPI-KEY", "API_KEY");
+  const headers = new Headers();
+  headers.append('X-CSCAPI-KEY', 'API_KEY');
 
-  var requestOptions = {
+  const requestOptions = {
     method: 'GET',
-    headers: headers,
-    redirect: 'follow'
+    headers,
+    redirect: 'follow',
   };
 
-  fetch("https://api.countrystatecity.in/v1/countries/IN/states/MH/cities", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
-})
+  fetch('https://api.countrystatecity.in/v1/countries/IN/states/MH/cities', requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.log('error', error));
+});
 
 router.get('/states', async (req, res) => {
   try {
-    const states = await State.find().sort({ "label": 1 })
-    return res.status(200).json(states)
+    const states = await State.find().sort({ label: 1 });
+    return res.status(200).json(states);
   } catch (error) {
-    res.status(404).json({ error: error })
+    res.status(404).json({ error });
   }
-  var headers = new Headers();
-  headers.append("X-CSCAPI-KEY", "API_KEY");
+  const headers = new Headers();
+  headers.append('X-CSCAPI-KEY', 'API_KEY');
 
-  var requestOptions = {
+  const requestOptions = {
     method: 'GET',
-    headers: headers,
-    redirect: 'follow'
+    headers,
+    redirect: 'follow',
   };
 
-  fetch("https://api.countrystatecity.in/v1/countries/IN/states/", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
-})
+  fetch('https://api.countrystatecity.in/v1/countries/IN/states/', requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.log('error', error));
+});
 
+// eslint-disable-next-line no-unused-vars
 router.get('/imageUpload', async (req, res) => {
- 
-})
 
+});
 
 module.exports = router;

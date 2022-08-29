@@ -1,37 +1,38 @@
-require('dotenv').config()
+require('dotenv').config();
 
-const cors = require('cors')
-const express = require('express')
-const mongoose = require('mongoose')
+const cors = require('cors');
+const express = require('express');
+const mongoose = require('mongoose');
 
-const app = express()
+const app = express();
 
-//Middleware
-app.use(cors())
-app.use(express.json())
+// Middleware
+app.use(cors());
+app.use(express.json());
 
-//routes
-const authRoutes = require('./routes/auth')
-app.use('/api/auth', authRoutes)
-const sellerRoutes = require('./routes/sellers')
-app.use('/api/sellers', sellerRoutes)
-const apiRoutes = require('./routes/api')
-app.use('/api', apiRoutes)
+// routes
+const authRoutes = require('./routes/auth');
 
+app.use('/api/auth', authRoutes);
+const sellerRoutes = require('./routes/sellers');
 
-app.listen(process.env.PORT,()=>{
-  console.log("Server started on PORT 1337")
-})
+app.use('/api/sellers', sellerRoutes);
+const apiRoutes = require('./routes/api');
+
+app.use('/api', apiRoutes);
+
+app.listen(process.env.PORT, () => {
+  console.log('Server started on PORT 1337');
+});
 
 const uri = process.env.MONGO_URI;
 
-async function connectionToDatabase(){
-  try{
-      await mongoose.connect(uri);
-      console.log("Connected to MongoDB");
+async function connectionToDatabase() {
+  try {
+    await mongoose.connect(uri);
+    console.log('Connected to MongoDB');
+  } catch (error) {
+    console.error(error);
   }
-   catch(error){
-     console.error(error);
-   }
 }
 connectionToDatabase();
