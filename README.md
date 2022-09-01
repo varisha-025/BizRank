@@ -1,4 +1,4 @@
-# SmallBusinessRatingSystem
+# BizRank
 
 A web application for rating the small businesses thriving across the internet. It also allows users to mark their favourite businesses, share them with their friends and family, enjoy the ongoing sale and set a reminder of the upcoming sale on their favourite brands.
 
@@ -57,7 +57,7 @@ commit messages are standardized:
 ## Local Setup
 
 - Fork and clone the repository.
-- Add remote upstream `git remote add upstream https://github.com/varisha-025/SmallBusinessesRatingSystem.git`
+- Add remote upstream `git remote add upstream https://github.com/varisha-025/BizRank.git`
 
 ### Backend setup
 
