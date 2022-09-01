@@ -1,4 +1,4 @@
-import SellerForm from "../../components/SellerFormComponents/SellerForm";
+import SellerForm from "../../components/Forms/SellerFormComponents/SellerForm";
 
 
 const SellerRegister = () => {
