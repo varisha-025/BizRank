@@ -128,3 +128,9 @@ button.MuiButton-containedSecondary {
 #lab_social_icon_footer #social-em:hover {
   color: #f39c12;
 }
+
+.header-logo {
+  width: 110px;
+  border-radius: 6px;
+  margin-right: 18px;
+}
