@@ -7,8 +7,8 @@ import Register from './pages/Authentication/CustomerRegister'
 import SellerLogin from './pages/Authentication/SellerLogin'
 import SellerRegister from './pages/Authentication/SellerRegister'
 import BusinessPage from './pages/BusinessPage'
-import RatingForm from './components/RatingForm'
-import SaleForm from './components/SaleForm'
+import RatingForm from './components/Forms/RatingForm'
+import SaleForm from './components/Forms/SaleForm'
 import preloader from './assets/newstar.gif'
 
 const App = () => {
