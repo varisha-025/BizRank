@@ -37,7 +37,7 @@
 //               </div>
 //             </li>
 //             <li className="nav-item dropdown">
-            
+
 //               <Avatar  sx={{ width: 36, height: 34 , bgcolor: deepPurple[500] }}>{ }</Avatar>
 //                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
 //                   <a className="dropdown-item" href="/login">My feedbacks</a>
@@ -45,7 +45,7 @@
 //                   <a className="dropdown-item" href="/sellerLogin">Account Settings</a>
 //                   <a className="dropdown-item" href="/sellerLogin">Logout</a>
 //                 </div>
-            
+
 //             </li>
 //           </ul>
 //         </div>
@@ -89,6 +89,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import logoImageSrc from '../../images/logo.jpg'
 
 const pages = ['Login', 'Register'];
 const settings = ['My Profile', 'Account Settings', 'My favourites', 'Reminders', 'Logout'];
@@ -125,25 +126,7 @@ const Navbar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
-
+          <img alt="logo" className="header-logo" src={logoImageSrc} />
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
