@@ -128,3 +128,49 @@ button.MuiButton-containedSecondary {
 #lab_social_icon_footer #social-em:hover {
   color: #f39c12;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s ease;
+    font-family: 'Poppins', sans-serif !important;
+    margin: auto;
+    max-width: 120rem;
+    font-style: normal;
+    cursor:default;
+    color: #fff !important;
+}
+
+
+body{
+  background-color: black;
+}
+
+.boxContainer{
+  box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+;
+
+margin-top: 5%;
+
+}
+
+.imgTab{
+  box-shadow: none !important;
+}
+
+.css-dqr9h-MuiRating-label{
+  color: yellow !important;
+}
+
+.ratetext{
+  font-size: 20px;
+}

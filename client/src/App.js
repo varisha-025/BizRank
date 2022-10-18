@@ -9,7 +9,8 @@ import SellerRegister from './pages/Authentication/SellerRegister'
 import BusinessPage from './pages/BusinessPage'
 import RatingForm from './components/Forms/RatingForm'
 import SaleForm from './components/Forms/SaleForm'
-
+import BasicTabs from './components/Tabcomponents/TabPanelsCard'
+import './App.css'
 const App = () => {
 	return (
 		<div className='App'>
@@ -24,6 +25,8 @@ const App = () => {
 					<Route path="/sellerRegister" element={<SellerRegister />} />
 					<Route path="/ratingForm" element={<RatingForm />} />
 					<Route path="/saleForm" element={<SaleForm />} />
+					<Route path="/saleForm" element={<SaleForm />} />
+					<Route path="/cards" element={<BasicTabs />} />
 				</Routes>
 			</BrowserRouter>
 		</div>
