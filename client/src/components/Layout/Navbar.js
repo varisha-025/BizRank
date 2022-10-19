@@ -89,7 +89,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import logoImageSrc from '../../images/logo.jpg'
+import logoImageSrc from '../../assets/logo.jpg'
 
 const pages = ['Login', 'Register'];
 const settings = ['My Profile', 'Account Settings', 'My favourites', 'Reminders', 'Logout'];
