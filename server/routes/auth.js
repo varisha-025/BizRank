@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 // const sendEmail = require("../utils/sendEmail");
 // const Token = require("../models/token.module");
 const User = require('../models/user.module');
-const Seller = require('../models/seller.module');
+const Brand = require('../models/brand.module');
 
 const router = express.Router();
 
@@ -52,7 +52,7 @@ router.post('/login', async (req, res) => {
   return res.json({ status: 'error', user: false });
 });
 
-router.post('/sellerRegister', async (req, res) => {
+router.post('/brandRegister', async (req, res) => {
   console.log(req.body);
 
   const socialMediavalue = {
@@ -67,15 +67,15 @@ router.post('/sellerRegister', async (req, res) => {
   };
   try {
     const newPassword = await bcrypt.hash(req.body.password, 10);
-    const newSeller = await new Seller({
+    const newBrand = await new Brand({
       name: req.body.name,
       email: req.body.email,
       password: newPassword,
       dob: req.body.dob,
       phoneNumber: req.body.phoneNumber,
-      // address: addressValue,
+      address: addressValue,
       gender: req.body.gender,
-      // brandLogo: req.body.brandLogo,
+      brandLogo: req.body.brandLogo,
       brandName: req.body.brandName,
       brandDesc: req.body.brandDesc,
       brandWebsite: req.body.brandWebsite,
@@ -86,42 +86,42 @@ router.post('/sellerRegister', async (req, res) => {
       brandContactEmail: req.body.brandContactEmail,
       socialMediaHandles: socialMediavalue,
     });
-    console.log(addressValue);
-    newSeller.address = addressValue;
-    console.log(newSeller);
-    newSeller.save();
-    res.status(200).json({ status: 'ok', seller: newSeller });
+    // console.log(addressValue);
+    // newSeller.address = addressValue;
+    // console.log(newSeller);
+    // newSeller.save();
+    res.status(200).json({ status: 'ok', seller: newBrand });
   } catch (err) {
     res.status(404).json({ status: 'error', error: err.message });
   }
 });
 
-router.post('/sellerLogin', async (req, res) => {
-  const seller = await Seller.findOne({
-    email: req.body.email,
-  });
+// router.post('/sellerLogin', async (req, res) => {
+//   const seller = await Brand.findOne({
+//     email: req.body.email,
+//   });
 
-  if (!seller) {
-    return res.json({ status: 'error', error: 'Invalid login' });
-  }
+//   if (!seller) {
+//     return res.json({ status: 'error', error: 'Invalid login' });
+//   }
 
-  const isPasswordValid = await bcrypt.compare(
-    req.body.password,
-    seller.password,
-  );
+//   const isPasswordValid = await bcrypt.compare(
+//     req.body.password,
+//     seller.password,
+//   );
 
-  if (isPasswordValid) {
-    const token = jwt.sign(
-      {
-        name: seller.name,
-        email: seller.email,
-      },
-      'secret123',
-    );
+//   if (isPasswordValid) {
+//     const token = jwt.sign(
+//       {
+//         name: seller.name,
+//         email: seller.email,
+//       },
+//       'secret123',
+//     );
 
-    return res.json({ status: 'ok', seller: token });
-  }
-  return res.json({ status: 'error', seller: false });
-});
+//     return res.json({ status: 'ok', seller: token });
+//   }
+//   return res.json({ status: 'error', seller: false });
+// });
 
 module.exports = router;

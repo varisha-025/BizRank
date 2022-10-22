@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import SellerBusinessDetailsForm from './SellerBusinessDetailsForm';
-import SellorPersonalDetailsForm from './SellerPersonalDetailsForm';
-import Confirm from './ConfirmSellerFormDetails';
+import SellerBusinessDetailsForm from './BrandDetailsForm';
+import SellorPersonalDetailsForm from './PersonalDetails';
+import Confirm from './ConfirmBrandFormDetails';
 import Success from './Success';
 import { styled } from '@mui/material/styles';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';

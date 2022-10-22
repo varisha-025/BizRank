@@ -1,5 +1,5 @@
 const express = require('express');
-const Seller = require('../models/seller.module');
+const Brand = require('../models/brand.module');
 const Products = require('../models/product.module');
 
 const router = express.Router();
@@ -7,8 +7,8 @@ const router = express.Router();
 // get all sellers
 router.get('/', async (req, res) => {
   try {
-    const sellers = await Seller.find();
-    return res.status(200).json(sellers);
+    const brands = await Brand.find();
+    return res.status(200).json(brands);
   } catch (error) {
     res.status(404).json({ error });
   }
@@ -37,8 +37,8 @@ router.get('/products', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const { id: _id } = req.params;
-    const seller = await Seller.findById(_id);
-    res.status(200).json(seller);
+    const brand = await Brand.findById(_id);
+    res.status(200).json(brand);
   } catch (error) {
     res.status(404).json({
       message: error.message,
