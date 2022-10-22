@@ -134,3 +134,17 @@ button.MuiButton-containedSecondary {
   border-radius: 6px;
   margin-right: 18px;
 }
+
+.header-color {
+  color: #dabb59;
+}
+
+.header-bg{
+  background-color: black;
+  color: white;
+  margin-top: -1%;
+  padding: 0 15%;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  
+}
