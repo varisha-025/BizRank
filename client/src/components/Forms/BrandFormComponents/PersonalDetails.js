@@ -40,7 +40,7 @@ function SellerPersonalDetailsForm({ formData, setFormData, page }) {
   }
 
   useEffect(() => {
-    fetchCities()
+    fetchCities() 
     fetchStates()
   }, [])
 
@@ -50,27 +50,36 @@ function SellerPersonalDetailsForm({ formData, setFormData, page }) {
 
   return (
 
-    <section className="h-screen px-16 mx-12">
-      <div className="px-6 h-full text-gray-800">
-        <div className="flex justify-center items-center flex-wrap h-full g-6">
-
-          <div className="xl:ml-20 text-center xl:w-3/5 lg:w-2/3 md:w-2/3 mb-12 md:mb-0">
-
-            <div className="mb-6">
-
-              <TextField
+    <section className="w-full">
+  <div class="flex flex-wrap -mx-3 mb-6">
+    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide  text-gray-900 text-xs font-bold mb-2" for="grid-first-name">
+        Full Name
+      </label>
+      
+      <TextField
+                sx={{
+                  backgroundColor:"#fff",
+                }}
                 fullWidth
                 required
                 label="Full Name"
                 defaultValue={formData.name}
-                onChange={(e) => {
+            First    onChange={(e) => {
                   setFormData({ ...formData, name: e.target.value });
                 }}
                 type="text"> Full Name
-              </TextField>
-            </div>
-            <div className="mb-6">
-              <TextField
+      </TextField>      
+      {/* <p class="text-red-500 text-xs italic">Please fill out this field.</p> */}
+    </div>   
+    <div class="w-full md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide  text-gray-900 text-xs font-bold mb-2" for="grid-last-name">
+        Email
+      </label>
+      <TextField
+                sx={{
+                  backgroundColor:"#fff"
+                }}
                 fullWidth
                 required
                 label="Email Address"
@@ -79,11 +88,21 @@ function SellerPersonalDetailsForm({ formData, setFormData, page }) {
                   setFormData({ ...formData, email: e.target.value });
                 }}
                 type="email"> Email address
-              </TextField>
-            </div>
-            <div className="mb-6">
-
-              <TextField
+      </TextField>
+          {/* <p class="text-red-500 text-xs italic">Please fill out this field.</p> */}
+    
+    </div>           
+  </div>
+  <div class="flex flex-wrap -mx-3 mb-6">
+    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide  text-gray-900 text-xs font-bold mb-2" for="grid-first-name">
+        Password
+      </label>
+      
+      <TextField
+                sx={{
+                  backgroundColor:"#fff"
+                }}
                 required
                 fullWidth
                 label="Password"
@@ -93,13 +112,18 @@ function SellerPersonalDetailsForm({ formData, setFormData, page }) {
                 onChange={(e) => {
                   setFormData({ ...formData, password: e.target.value });
                 }}
-              >  Password
-              </TextField>
-            </div>
-
-            <div className="mb-6">
-
-              <TextField
+              >  Password 
+      </TextField>      
+      {/* <p class="text-red-500 text-xs italic">Please fill out this field.</p> */}
+    </div>
+    <div class="w-full md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide  text-gray-900 text-xs font-bold mb-2" for="grid-last-name">
+        Phone Number
+      </label>
+      <TextField
+                sx={{
+                  backgroundColor:"#fff"
+                }}
                 fullWidth
                 defaultValue={formData.phoneNumber}
                 label="Phone Number"
@@ -108,10 +132,20 @@ function SellerPersonalDetailsForm({ formData, setFormData, page }) {
                   setFormData({ ...formData, phoneNumber: e.target.value });
                 }}
                 type="tel"> Phone Number
-              </TextField>
-            </div>
-            <div className="mb-6">
-              <TextField
+      </TextField>
+          {/* <p class="text-red-500 text-xs italic">Please fill out this field.</p> */}
+    </div>      
+  </div>
+  <div class="flex flex-wrap -mx-3 mb-6">
+    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide  text-gray-900 text-xs font-bold mb-2" for="grid-first-name">
+        Date of Birth
+      </label>
+      
+      <TextField
+                sx={{
+                  backgroundColor:"#fff"
+                }}
                 fullWidth
                 defaultValue={formData.dob}
                 label="Date of Birth"
@@ -120,14 +154,19 @@ function SellerPersonalDetailsForm({ formData, setFormData, page }) {
                   setFormData({ ...formData, dob: e.target.value });
                 }}
                 type="date"> Date of Birth
-              </TextField>
-            </div>
-            <div className="mb-6">
-
-              <div className="mb-6">
-                <FormControl fullWidth>
+              </TextField>    
+      {/* <p class="text-red-500 text-xs italic">Please fill out this field.</p> */}
+    </div>
+    <div class="w-full md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide  text-gray-900 text-xs font-bold mb-2" for="grid-last-name">
+        Gender
+      </label>
+      <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">Gender</InputLabel>
                   <Select
+                    sx={{
+                      backgroundColor:"#fff"
+                    }}
                     required
                     label="Gender"
                     value={formData.gender}
@@ -146,10 +185,20 @@ function SellerPersonalDetailsForm({ formData, setFormData, page }) {
 
                   </Select>
                 </FormControl>
-              </div>
-            </div>
-            <div className="mb-6">
-              <Autocomplete
+          {/* <p class="text-red-500 text-xs italic">Please fill out this field.</p> */}
+    </div>      
+              
+  </div>
+  
+  <div class="flex flex-wrap -mx-3 mb-2">
+    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide  text-gray-900 text-xs font-bold mb-2" for="grid-city">
+        State
+      </label>
+      <Autocomplete
+                sx={{
+                  backgroundColor:"#fff"
+                }}
                 required
                 value={formData.state}
                 options={stateOptions}
@@ -160,11 +209,17 @@ function SellerPersonalDetailsForm({ formData, setFormData, page }) {
                 renderInput={(params) => <TextField {...params} label="State" />}
                 isOptionEqualToValue={(option, value) => option.id === value.id}
               >
-              </Autocomplete>
-            </div>
-            <div className="mb-6">
-
-              <Autocomplete
+      </Autocomplete>  
+    </div>
+    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide  text-gray-900 text-xs font-bold mb-2" for="grid-state">
+        City
+      </label>
+      <div class="relative">
+          <Autocomplete
+                sx={{
+                  backgroundColor:"#fff"
+                }}
                 required
                 value={formData.city}
                 options={cityOptions}
@@ -175,11 +230,20 @@ function SellerPersonalDetailsForm({ formData, setFormData, page }) {
                 isOptionEqualToValue={(option, value) => option.id === value.id}
                 renderInput={(params) => <TextField {...params} label="City" />}
               >
-              </Autocomplete>
-            </div>
-            <div className="mb-6">
-
-              <TextField
+          </Autocomplete>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide  text-gray-900 text-xs font-bold mb-2" for="grid-zip">
+        Pincode
+      </label>
+      <TextField
+                sx={{
+                  backgroundColor:"#fff"
+                }}
                 fullWidth
                 defaultValue={formData.pincode}
                 label="Pincode"
@@ -188,22 +252,21 @@ function SellerPersonalDetailsForm({ formData, setFormData, page }) {
                   setFormData({ ...formData, pincode: e.target.value });
                 }}
                 type="number"> Pincode
-              </TextField>
-
-            </div>
+              </TextField>    
+    </div>
+  </div>
+  
             <div className='my-8'>
-            <Button
-              color="primary"
+            <button className='shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded'
               onClick={() => {
                 setFormData({ ...formData, page: page + 1 })
               }}
             >
             Next
-            </Button>
+            </button>
+          
             </div>
-          </div>
-        </div>
-      </div>
+        
     </section>
 
   );
