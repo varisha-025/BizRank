@@ -11,7 +11,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import logoImageSrc from "../../assets/logo.jpg";
 
@@ -53,7 +52,7 @@ const Navbar = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ background: "#000000" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             {/* LOGO DESKTOP*/}
@@ -117,7 +116,7 @@ const Navbar = () => {
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{ mr: 4, my: 2, color: "white", display: "block" }}
                 >
                   {page}
                 </Button>
