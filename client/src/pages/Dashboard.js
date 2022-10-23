@@ -20,7 +20,7 @@ const Dashboard = () => {
 
   return (
 
-    <Container sx={{ my: "5rem" }}>
+    <Container sx={{ py: "5rem" }}>
       
       {sellers.length > 0 && (
         <ul>
