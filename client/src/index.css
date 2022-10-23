@@ -1,12 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 body {
   margin: 0;
   background-color: whitesmoke;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,7 +18,6 @@ body {
 button.MuiButton-containedSecondary {
   margin-bottom: 10px;
 }
-
 
 .step-indicator {
   display: flex;
@@ -91,7 +90,6 @@ button.MuiButton-containedSecondary {
   }
 }
 
-
 #lab_social_icon_footer a {
   color: #333;
 }
@@ -139,12 +137,11 @@ button.MuiButton-containedSecondary {
   color: #dabb59;
 }
 
-.header-bg{
-  background-color: black;
+.header-bg {
+  background-color: #272727;
   color: white;
   margin-top: -1%;
   padding: 0 15%;
   padding-top: 150px;
   padding-bottom: 150px;
-  
 }
