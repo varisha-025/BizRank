@@ -53,7 +53,7 @@ export default function ImageUpload() {
     };
     return (
         <div className='pb-14'>
-            <h1 className="title text-center pb-8">Upload Brand Logo</h1>
+            <h1 className="title text-center block uppercase tracking-wide  text-gray-900 text-xs font-bold mb-2">Upload Brand Logo</h1>
             <Alert msg={errMsg} type="danger" />
             <Alert msg={successMsg} type="success" />
             <form onSubmit={handleSubmitFile} className="form">
@@ -73,14 +73,7 @@ export default function ImageUpload() {
                 />
                 </label>
             </div> 
-                {/* <input
-                    id="fileInput"
-                    type="file"
-                    name="image"
-                    onChange={handleFileInputChange}
-                    value={fileInputState}
-                    className="form-input"
-                /> */}
+
                 {/* <button className="btn" type="submit">
                     Submit
                 </button> */}
