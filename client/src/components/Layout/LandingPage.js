@@ -1,5 +1,8 @@
 import React from 'react'
 import {BsCircleFill} from 'react-icons/bs';
+import img1 from "../../assets/body-img1.png";
+import img2 from "../../assets/body-img2.png";
+import img3 from "../../assets/body-img3.png";
 
 const LandingPage=()=> {
     return(
@@ -27,7 +30,7 @@ const LandingPage=()=> {
                           <h5 class="text-white text-xl font-medium mb-2">Add essential information</h5>
                         </div>
                         <a href="#!">
-                          <img class="rounded-t-lg p-2" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
+                          <img class="rounded-t-lg p-2" src={img1} alt=""/>
                         </a>
                         <div class="p-6">
                           <p class="text-white text-base mb-4">
@@ -52,7 +55,7 @@ const LandingPage=()=> {
                           <h5 class="text-white text-xl font-medium mb-2">Share product photos,logo and goals</h5>
                         </div>
                         <a href="#!">
-                          <img class="rounded-t-lg p-2" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
+                          <img class="rounded-t-lg p-2" src={img2} alt=""/>
                         </a>
                         <div class="p-6">
                           <p class="text-white text-base mb-4">
@@ -77,7 +80,7 @@ const LandingPage=()=> {
                           <h5 class="text-white text-xl font-medium mb-2">Add sale info</h5>
                         </div>
                         <a href="#!">
-                          <img class="rounded-t-lg p-2" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
+                          <img class="rounded-t-lg p-2" src={img3} alt=""/>
                         </a>
                         <div class="p-6">
                           <p class="text-white text-base mb-4">
