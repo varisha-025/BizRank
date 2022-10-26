@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import Typography from '@mui/material/Typography';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { Image } from 'mui-image'
 import FormControl from '@mui/material/FormControl';
 import ImageUpload from './ImageUpload';
 
 function SellerBusinessDetailsForm({ formData, setFormData, page }) {
   const [productCategoriesOptions, setProductCategoriesOptions] = useState([])
-  const [imgData, setImgData] = useState('../../../public/white-bg.png');
-  const [brandLogo, setBrandLogo] = useState(null);
 
   const deliveryTimeOptions = [
     "1-2 days",
@@ -35,20 +31,6 @@ function SellerBusinessDetailsForm({ formData, setFormData, page }) {
     setFormData({ ...formData, productCategories: typeof value === 'string' ? value.split(',') : value, })
 
   }
-
-  const onChangeLogo = e => {
-
-    if (e.target.files[0]) {
-      setBrandLogo(e.target.files[0]);
-      const reader = new FileReader();
-      reader.addEventListener("load", () => {
-        setImgData(reader.result);
-        setFormData({ ...formData, brandLogo: imgData });
-
-      });
-      reader.readAsDataURL(e.target.files[0]);
-    }
-  };
 
   const fetchProductCategories = () => {
     fetch("http://localhost:1337/api/sellers/products")
