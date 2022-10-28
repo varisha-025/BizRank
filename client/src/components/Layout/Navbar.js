@@ -1,5 +1,6 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
+import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -14,7 +15,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import logoImageSrc from "../../assets/logo.jpg";
 
-const pages = ["Sale", "About Us", "Contact", "Login"];
+const pages = [["Sale","/"], ["About Us","/"], ["Contact","/"], ["Login","/login"]];
 const settings = [
   "My Profile",
   "Account Settings",
@@ -92,7 +93,7 @@ const Navbar = () => {
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <Typography textAlign="center"><Link href={page[1]} underline="none" color="inherit">{page[0]}</Link></Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -114,11 +115,11 @@ const Navbar = () => {
             >
               {pages.map((page) => (
                 <Button
-                  key={page}
+                  key={page[0]}
                   onClick={handleCloseNavMenu}
                   sx={{ mr: 4, my: 2, color: "white", display: "block" }}
                 >
-                  {page}
+                <Link href={page[1]} color="inherit" underline="none"  sx={{':hover': {color: '#ffffff',},}}>{page[0]}</Link>
                 </Button>
               ))}
             </Box>
