@@ -11,7 +11,15 @@ module.exports = {
         md: '768px',
         lg: '976px',
         xl: '1440px',
-      }
+      },
+      backgroundColor: theme => ({
+        ...theme('colors'),
+        'AuthBackground': '#121212',
+        'AuthForm': '#151515',
+        'AuthButton': '#273c75',
+        'AuthSignup':'#495b94',
+        'AuthInput':'#1e1e1e'
+      })
     },
   },
   plugins: [],

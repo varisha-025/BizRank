@@ -9,7 +9,7 @@ const Login = () => {
 
 	async function loginUser(event) {
 		event.preventDefault()
-		const userDetails = {email, password}
+		const userDetails = { email, password }
 		const response = await fetch('http://localhost:1337/api/auth/login', {
 			method: 'POST',
 			headers: {
@@ -29,32 +29,31 @@ const Login = () => {
 		}
 	}
 
-  return (
-	<div>
-		<h1 className='text-center font-extrabold mt-6 text-3xl'>Login User</h1>
-		<section className="h-screen px-16 mx-12">
-				<div className="px-6 h-full text-gray-800">
+	return (
+		<div className='bg-AuthBackground font-sans font-light'>
+
+			<section className="h-screen px-16 mx-12  border-black">
+				<div className="px-6 h-full text-gray-800  border-black text-center flex items-center justify-center">
 					<div
-						className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6"
+						className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-fit w-fit g-6  border-red-400	flex-col rounded-2xl text-white bg-AuthForm"
 					>
-						<div
-							className="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0"
-						>
-							<img
-								src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-								className="w-full"
-								alt="Sample"
-							/>
-						</div>
-						<div className="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
-							<form onSubmit={loginUser}>
-								
-								<div className="mb-6">
+						<h1 className='text-center font-light mt-6 text-3xl  border-red-400 '>Login</h1>
+
+						<div className="mb-12 md:mb-0  border-white mx-auto p-16 w-full">
+
+
+
+							<form onSubmit={loginUser} >
+
+								<div className="mb-6  border-white">
+									<div className="text-white text-left ml-4 text-xl mb-[0.8rem]">
+										Email
+									</div>
 									<input
 
-										className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-										
-										placeholder="Email address"
+										className="form-control block xl:w-96 px-4 py-2 text-xl font-normal text-white bg-AuthInput bg-clip-padding rounded-full transition ease-in-out m-0 focus:text-gray-700 focus:bg-gray-800 focus:outline-none border-none"
+
+										placeholder="Email"
 										value={email}
 										onChange={(e) => setEmail(e.target.value)}
 										type="email"
@@ -62,45 +61,47 @@ const Login = () => {
 									/>
 								</div>
 
-								<div className="mb-6">
+								<div className="mb-8">
+									<div className="text-white text-left ml-4 text-xl mb-[0.8rem]">
+										Password
+									</div>
 									<input
-										className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-										
+										className="form-control block xl:w-96 px-4 py-2 text-xl font-normal text-white bg-AuthInput bg-clip-padding  transition ease-in-out m-0 focus:text-gray-700 focus:bg-gray-800 focus:outline-none rounded-full border-none"
+
 										placeholder="Password"
 										value={password}
 										onChange={(e) => setPassword(e.target.value)}
 										type="password" />
 								</div>
 
-								<div className="flex justify-end items-center mb-6">
-									
-
-									<a href="#!" className="text-gray-800">Forgot password?</a>
+								<div className="mb-10  border-black text-left">
+									<a href="#!" className=" border-green-700 text-white ml-4 ">Forgot password?</a>
 								</div>
 
 								<div className="text-center lg:text-left">
 									<button
 										type="submit"
-										className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+										className="inline-block px-7 py-3 bg-AuthButton text-white font-medium text-sm leading-snug uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
 									>
 										Login
 									</button>
-									<p className="text-md font-semibold mt-2 pt-1 mb-0">
-										Don't have an account?
+									<p className="text-md font-light mt-2 pt-1 mb-0 flex justify-center items-center  border-white p-4 ">
+										<div className='mx-4  border-white'>New User?</div>
 										<a
 											href="/register"
-											className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-										> Register</a
+											className="text-blue-500 underline hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out mr-6  border-white"
+										> Signup</a
 										>
 									</p>
 								</div>
 							</form>
+
 						</div>
 					</div>
 				</div>
 			</section>
-	</div>
-  )
+		</div>
+	)
 }
 
 export default Login
