@@ -16,9 +16,9 @@ const LandingPage=()=> {
                 <h3 className='text-[2.5rem] font-bold'>First impression is the last impresion</h3>
                 <p  className='text-[1.25rem] pt-3 font-thin'>Highlight essential info and show what makes your business unique, right on your Business Profile.</p>
             </div>
-            <div className='flex flex-row space-x-[6rem] justify-center pt-[10rem] px-[12rem]'>
-                <div className='flex-row space-x-2 inline-flex'>
-                    <div className="text-[3.5rem] text-[#dabb59]">
+            <div className='flex flex-row space-x-[4rem] justify-center py-[15rem] px-[5rem] '>
+                <div className='flex-row space-x-2 inline-flex w-[30rem] h-[34rem] '>
+                    <div className="text-[3.5rem] text-[#dabb59] pr-1">
                         <div className='relative items-center flex'>
                          <BsCircleFill  />
                          <p className='text-white absolute text-[2.5rem] ml-4'>1</p>
@@ -26,15 +26,13 @@ const LandingPage=()=> {
                     </div>
                     <div class="flex justify-center">
                       <div class="rounded-xl shadow-lg bg-[#3d3d3d] max-w-sm ">
-                        <div class="pt-2 px-4">
+                        <div class="pt-3 px-4">
                           <h5 class="text-white text-[1.25rem] font-medium  pt-2">Add essential information</h5>
                         </div>
-                        <a href="#!">
-                          <img class="rounded-t-lg px-6 pt-8" src={img1} alt=""/>
-                        </a>
-                        <div class="p-6">
-                          <p class="text-white text-[1.25rem] text-base ">
-                            Let customers know info like hone number, products you sell, health and safety
+                          <img class="rounded-t-lg px-6 pt-8" src={img1} alt="an illustrtaion for information"/>
+                        <div class="px-4 pt-[1rem]">
+                          <p class="text-white text-[1.075rem]">
+                            Let customers know info like phone number, products you sell, health and safety
                             measures so customers know what to expect.
                           </p>
                         </div>
@@ -42,7 +40,7 @@ const LandingPage=()=> {
                     </div>
                 </div>
 
-                <div className='flex-row space-x-2 inline-flex'>
+                <div className='flex-row space-x-2 inline-flex w-[30rem] h-[34rem] '>
                     <div className="text-[3.5rem] text-[#dabb59]">
                         <div className='relative items-center flex'>
                          <BsCircleFill  />
@@ -54,11 +52,10 @@ const LandingPage=()=> {
                         <div class="pt-2 px-4">
                           <h5 class="text-white text-[1.25rem] font-medium mb-2 pt-2">Share product photos, brand logo and your goals</h5>
                         </div>
-                        <a href="#!">
-                          <img class="rounded-t-lg px-6 pt-1" src={img2} alt=""/>
-                        </a>
-                        <div class="p-6">
-                          <p class="text-white text-[1.25rem] text-base ">
+                          <img class="rounded-t-lg px-6 pt-1" src={img2} alt="an illustration for branding and awareness"/>
+                        
+                        <div class="px-4 pt-[1rem]">
+                          <p class="text-white text-[1.075rem] text-base ">
                             Showcase your brand logo, product photos and what are your goals for their business to stand out more.
                           </p>
                         </div>
@@ -67,7 +64,7 @@ const LandingPage=()=> {
                 </div>
 
 
-                <div className='flex-row space-x-2 inline-flex'>
+                <div className='flex-row space-x-2 inline-flex w-[30rem] h-[34rem] '>
                     <div className="text-[3.5rem] text-[#dabb59]">
                         <div className='relative items-center flex'>
                          <BsCircleFill  />
@@ -79,11 +76,9 @@ const LandingPage=()=> {
                         <div class="px-4 pt-2">
                           <h5 class="text-white text-[1.25rem] font-medium  pt-2">Add sale info</h5>
                         </div>
-                        <a href="#!">
-                          <img class="rounded-t-lg px-6 pt-8" src={img3} alt=""/>
-                        </a>
-                        <div class="p-6">
-                          <p class="text-white text-[1.25rem] text-base">
+                          <img class="rounded-t-lg px-6 pt-8" src={img3} alt="an illustration for sale"/>
+                        <div class="px-4 pt-[1rem]">
+                          <p class="text-white text-[1.075rem] text-base">
                             Add info about your sale so customers can set a reminder and miss it!
                           </p>
                         </div>
