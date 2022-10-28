@@ -5,7 +5,7 @@
 A web application for rating the small businesses thriving across the internet. It also allows users to mark their favourite businesses, share them with their friends and family, enjoy the ongoing sale and set a reminder of the upcoming sale on their favourite brands.
 
 - [Tech stack](#Tech-stack)
-- [Want to contribute](#Want-to-contribute?)
+- [Want to contribute](#Want-to-contribute)
 - [Standard Commit Messages](#Standard-Commit-Messages)
 - [Before making PR](#Before-making-PR)
 - [Local Setup](#Local-Setup)
@@ -52,6 +52,7 @@ commit messages are standardized:
 > Note: All the commits should be made from the root directory of the repository
 
 ### Before making PR
+
 - Run `npm run lint` for checking lint errors.
 - Run `git fetch upstream` & `git rebase upstream/master` to fetch updated codebase into your local repository before creating any new branch.
 - Run `git checkout -b <your-branch-name>`
