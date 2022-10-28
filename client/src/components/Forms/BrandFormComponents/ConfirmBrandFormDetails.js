@@ -3,33 +3,8 @@ import { List, ListItem, ListItemText, Typography } from '@mui/material/';
 import Button from '@mui/material/Button';
 
 
-async function registerSeller(sellerDetails) {
-    console.log(sellerDetails, "from jhi func")
-    const response = await fetch('http://localhost:1337/api/auth/sellerRegister', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body:
-            JSON.stringify(sellerDetails)
-        ,
-    })
-
-    const data = await response.json()
-    console.log(data.status)
-
-    if (data.status === 'ok') {
-        console.log("Seller added", data.seller)
-        // navigate("/sellerLogin")
-    }
-    else {
-        console.log("Some error ocurred", data.error)
-    }
-}
-
-
 function ConfirmSellerFormDetails({ formData, setFormData, page }) {
-    const { name, email, phoneNumber, password, dob, gender, state, city, pincode, brandName, brandDesc, brandLogo, brandWebsite, instagramHandleValue, youtubeChannelValue, facebookHandleValue, paymentOptions, deliveryTime, productCategories, brandContactEmail, brandContactNumber } = formData
+    const { name, email, phoneNumber, password, dob, gender, state, city, pincode, brandName, brandDesc, brandWebsite, instagramHandleValue, youtubeChannelValue, facebookHandleValue, paymentOptions, deliveryTime, productCategories, brandContactEmail, brandContactNumber } = formData
     console.log(formData)
     const selllerDetails = { name: name, email: email, password: password, phoneNumber: phoneNumber, dob: dob, gender: gender, address: { state: state, city: city, pincode: pincode }, brandName: brandName, brandDesc: brandDesc, brandWebsite: brandWebsite, socialMediaHandles: { instagram: instagramHandleValue, youtubeChannel: youtubeChannelValue, facebook: facebookHandleValue }, paymentOptions: paymentOptions, deliveryTime: deliveryTime, productCategories: productCategories, brandContactEmail: brandContactEmail, brandContactNumber: brandContactNumber }
     return (
