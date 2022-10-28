@@ -1,24 +1,27 @@
 import React from 'react'
+import instaSocialIcon from "../../assets/instagram2.png";
+import facebookSocialIcon from "../../assets/facebook2.png";
+import gmailSocialIcon from "../../assets/gmail2.png";
+import '../../css/Footer.css';
+import { Box } from '@mui/material';
 
 const Footer = () => {
   return (
 
-    <footer className="text-center text-white p-10 bg-[#808080]" >
-      <section id="lab_social_icon_footer">
+    <Box className="text-center text-white bg-[#000000]" sx={{py: "5rem"}}>
+      <Box id="lab_social_icon_footer">
         <div className="container">
-          <div className="text-center center-block">
-            <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" className="px-2 fa fa-facebook-square fa-3x social"></i></a>
-            <a href="https://twitter.com/bootsnipp"><i id="social-tw" className="fa px-2 fa-twitter-square fa-3x social"></i></a>
-            <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" className="fa px-2 fa-google-plus-square fa-3x social"></i></a>
-            <a href="mailto:#"><i id="social-em" className="fa fa-envelope-square fa-3x px-2 social"></i></a>
+          <div className="text-center center-block iconContainer">
+            <a href="https://www.instagram.com" className="icon"><img alt="Instagram-logo" src={instaSocialIcon}/></a>
+            <a href="https://www.facebook.com" className="icon"><img alt="Facebook-logo" src={facebookSocialIcon}/></a>
+            <a href="mailto:varisharashid01@gmail.com" className="icon"><img alt="gmail-logo" src={gmailSocialIcon}/></a>
           </div>
         </div>
-      </section>
-
-      <div className="text-center text-white p-4" >
-        © 2022 Copyright
-      </div>
-    </footer>
+      </Box>
+      <Box className="text-center text-white" sx={{mt:"2rem"}} >
+        <span><a href='/'>BizRank</a></span> © 2022 Copyright
+      </Box>
+    </Box>
   )
 }
 
