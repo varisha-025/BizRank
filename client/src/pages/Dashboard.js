@@ -3,14 +3,14 @@ import BusinessCard from '../components/Layout/BusinessCard'
 import { Container } from '@mui/system';
 
 const Dashboard = () => {
-  const [sellers, setSellers] = useState([])
+  const [brands, setBrands] = useState([])
   const fetchData = () => {
-    fetch("http://localhost:1337/api/sellers")
+    fetch("http://localhost:1337/api/brands")
       .then(response => {
         return response.json()
       })
       .then(data => {
-        setSellers(data)
+        setBrands(data)
       })
   }
 
@@ -20,12 +20,12 @@ const Dashboard = () => {
 
   return (
 
-    <Container sx={{ my: "5rem" }}>
+    <Container sx={{ py: "5rem" }}>
       
-      {sellers.length > 0 && (
+      {brands.length > 0 && (
         <ul>
-          {sellers.map(seller => (
-            <BusinessCard key={seller._id} brandName={seller.brandName} paymentOptions={seller.paymentOptions} deliveryTime={seller.deliveryTime} socialMediaHandles={seller.socialMediaHandles} productCategories={seller.productCategories} brandDesc={seller.brandDesc} brandContactEmail={seller.brandContactEmail} brandContactNumber={seller.brandContactNumber} brandLogo={seller.brandLogo} brandWebsite={seller.brandWebsite} />
+          {brands.map(brand => (
+            <BusinessCard key={brand._id} brandName={brand.brandName} paymentOptions={brand.paymentOptions} deliveryTime={brand.deliveryTime} socialMediaHandles={brand.socialMediaHandles} productCategories={brand.productCategories} brandDesc={brand.brandDesc} brandContactEmail={brand.brandContactEmail} brandContactNumber={brand.brandContactNumber} brandLogo={brand.brandLogo} brandWebsite={brand.brandWebsite} />
           ))}
         </ul>
       )}

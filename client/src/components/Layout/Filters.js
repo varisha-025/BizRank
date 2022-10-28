@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 function Filters() {
   const [productCategoriesOptions, setProductCategoriesOptions] = useState([])
   const fetchProductCategories = () => {
-    fetch("http://localhost:1337/api/sellers/products")
+    fetch("http://localhost:1337/api/brands/products")
       .then(response => {
         return response.json()
       })
