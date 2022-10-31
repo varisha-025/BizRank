@@ -130,9 +130,10 @@ button.MuiButton-containedSecondary {
 }
 
 .header-logo {
-  width: 110px;
+  width: 150px;
   border-radius: 6px;
   margin-right: 18px;
+  padding-top: 10px;
 }
 
 .header-color {
