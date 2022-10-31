@@ -13,7 +13,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import logoImageSrc from "../../assets/logo.jpg";
+import logoImageSrc from "../../assets/bizranklogo.png";
 
 const pages = [["Sale","/"], ["About Us","/"], ["Contact","/"], ["Login","/login"]];
 const settings = [
