@@ -78,8 +78,7 @@ function SellerForm() {
           </div>
           <div className="form-container text-center">
             <div className="header pt-10">
-              <Typography variant='h4'> {FormTitles[formData.page]} </Typography>
-
+              <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-550 md:text-3xl lg:text-4xl dark:text-white"><span class="underline underline-offset-3 decoration-8 decoration-blue-500 dark:decoration-blue-600">{FormTitles[formData.page]}</span></h1>
             </div>
             <div className="body pt-10 text-center">{PageDisplay()}</div>
           </div>

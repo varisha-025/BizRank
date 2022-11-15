@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, ListItem, ListItemText, Typography } from '@mui/material/';
+import { List, ListItem, ListItemText, Typography,Divider} from '@mui/material/';
 import Button from '@mui/material/Button';
 
 
@@ -9,12 +9,11 @@ function ConfirmSellerFormDetails({ formData, setFormData, page }) {
     const selllerDetails = { name: name, email: email, password: password, phoneNumber: phoneNumber, dob: dob, gender: gender, address: { state: state, city: city, pincode: pincode }, brandName: brandName, brandDesc: brandDesc, brandWebsite: brandWebsite, socialMediaHandles: { instagram: instagramHandleValue, youtubeChannel: youtubeChannelValue, facebook: facebookHandleValue }, paymentOptions: paymentOptions, deliveryTime: deliveryTime, productCategories: productCategories, brandContactEmail: brandContactEmail, brandContactNumber: brandContactNumber }
     return (
         <section className="h-screen">
-            <div className="flex flex-col justify-center items-center  text-gray-800">
-
-                <div className="flex justify-between items-center xl:w-3/5 lg:w-2/3 md:w-2/3 mb-12 md:mb-0">
-                    <List>
-                        <div>
+            <div className="flex flex-col gap-4 justify-between items-center  text-gray-800">
+                    <List sx={{ width: '80%', bgcolor: 'background.paper' }}>
+                        <div className='m-2'>
                             <Typography variant='h5'> Personal Info</Typography>
+                            
                             <ListItem>
                                 <ListItemText
                                     primary="Name"
@@ -26,14 +25,17 @@ function ConfirmSellerFormDetails({ formData, setFormData, page }) {
                                 />
                                
                             </ListItem>
+                            <Divider />
 
                           <ListItem>
                                 <ListItemText primary="Gender" secondary= {
                                         <React.Fragment>
                                             {gender}
                                         </React.Fragment>
-                                    }/>
+                                    }/>  
                             </ListItem>
+                            <Divider />
+
                             <ListItem>
                                 <ListItemText primary="Date of Birth" secondary={
                                         <React.Fragment>
@@ -41,6 +43,8 @@ function ConfirmSellerFormDetails({ formData, setFormData, page }) {
                                         </React.Fragment>
                                     }/>
                             </ListItem>
+                            <Divider />
+
                             <ListItem>
                                 <ListItemText primary="Email" secondary={
                                         <React.Fragment>
@@ -48,6 +52,8 @@ function ConfirmSellerFormDetails({ formData, setFormData, page }) {
                                         </React.Fragment>
                                     }/>
                             </ListItem>
+                            <Divider />
+
                             <ListItem>
                                 <ListItemText primary="Phone Number" secondary={
                                         <React.Fragment>
@@ -55,6 +61,8 @@ function ConfirmSellerFormDetails({ formData, setFormData, page }) {
                                         </React.Fragment>
                                     }/>
                             </ListItem>
+                            <Divider />
+
                             <ListItem>
                                 <ListItemText primary="State" secondary={
                                         <React.Fragment>
@@ -62,6 +70,8 @@ function ConfirmSellerFormDetails({ formData, setFormData, page }) {
                                         </React.Fragment>
                                     }/>
                             </ListItem>
+                            <Divider />
+
                             <ListItem>
                                 <ListItemText primary="City" secondary={
                                         <React.Fragment>
@@ -69,6 +79,8 @@ function ConfirmSellerFormDetails({ formData, setFormData, page }) {
                                         </React.Fragment>
                                     }/>
                             </ListItem>
+                            <Divider />
+
                             <ListItem>
                                 <ListItemText primary="Pincode" secondary={
                                         <React.Fragment>
@@ -79,19 +91,24 @@ function ConfirmSellerFormDetails({ formData, setFormData, page }) {
                         </div>
                     </List>
 
-                    <List>
-                        <div>
-                            <Typography variant='h5'> Business Info</Typography>
-                            {/* <ListItem>
-                                    <ListItemText primary="Brand Logo" secondary={brandLogo} />
-                                </ListItem>  */}
+
+
+                    <List sx={{ width: '80%', bgcolor: 'background.paper' }}>
+                         <div className='m-2'>
+                            <Typography variant='h5'> Business Info</Typography>                           
                             <ListItem>
-                                <ListItemText primary="Brand Name" secondary={
+                                 <ListItemText primary="Brand Logo" secondary={brandLogo} />
+                            </ListItem> 
+                            <Divider />
+
+                            <ListItem>
+                               <ListItemText primary="Brand Name" secondary={
                                         <React.Fragment>
                                             {brandName}
                                         </React.Fragment>
                                     }/>
                             </ListItem>
+                            <Divider />
                             <ListItem>
                                 <ListItemText primary="Brand Description" secondary={
                                         <React.Fragment>
@@ -99,20 +116,26 @@ function ConfirmSellerFormDetails({ formData, setFormData, page }) {
                                         </React.Fragment>
                                     } />
                             </ListItem>
+                            <Divider />
                             <ListItem>
                                 <ListItemText primary="Brand Website" secondary={
                                         <React.Fragment>
                                             {brandWebsite}
                                         </React.Fragment>
                                     } />
-                            </ListItem> 
-                            {/* <ListItem>
+                            </ListItem>
+                            <Divider />
+                            <ListItem>
                                     <ListItemText primary="Product Categories" secondary={productCategories} />
-                                </ListItem> */}
+                            </ListItem>
+                            <Divider />
 
-                            {/* <ListItem>
+
+                            <ListItem>
                                     <ListItemText primary="Payment Options available" secondary={paymentOptions} />
-                                </ListItem> */}
+                                </ListItem>
+                            <Divider />
+
                            <ListItem>
                                 <ListItemText primary="Expected Delivery Time" secondary={
                                         <React.Fragment>
@@ -169,26 +192,26 @@ function ConfirmSellerFormDetails({ formData, setFormData, page }) {
                         </div>
                     </List>
 
-                </div>
 
-                <div className='mt-24 flex justify-center items-center'>
+                <div className='m-5 gap-4 flex justify-center items-center'>
 
-                    <Button hidden={page === 0}
+                    <button hidden={page === 0} 
+                        className='shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded'
                         onClick={() => {
                             setFormData({ ...formData, page: page - 1 })
                         }}>
                         Prev
-                    </Button>
+                    </button>
 
-                    <Button
-                        color="primary"
+                    <button
+                        className='shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded'
                         onClick={() => {
                             console.log(selllerDetails)
                             // registerSeller(selllerDetails)
                         }}
                     >
                         Confirm & Submit
-                    </Button>
+                    </button>
                 </div>
 
             </div>
@@ -197,3 +220,13 @@ function ConfirmSellerFormDetails({ formData, setFormData, page }) {
 }
 
 export default ConfirmSellerFormDetails
+
+
+
+
+
+
+
+
+
+
