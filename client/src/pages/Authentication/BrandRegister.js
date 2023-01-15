@@ -1,43 +1,43 @@
-// import { useState } from 'react'
-// import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import SellerForm from '../../components/Forms/BrandFormComponents/BrandForm';
 
 const Register = () => {
-	// const navigate = useNavigate();
+	const navigate = useNavigate();
 
-	// const [name, setName] = useState('')
-	// const [email, setEmail] = useState('')
-	// const [password, setPassword] = useState('')
-    // const [phoneNumber, setPhoneNumber] = useState()
-    // const [dob, setDob] = useState()
-	// async function registerUser(event) {
-	// 	event.preventDefault()
+	const [name, setName] = useState('')
+	const [email, setEmail] = useState('')
+	const [password, setPassword] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState()
+    const [dob, setDob] = useState()
+	async function registerUser(event) {
+		event.preventDefault()
 
-	// 	const userDetails = {name,email,password};
+		const userDetails = {name,email,password};
 
-		// const response = await fetch('http://localhost:1337/api/auth/register', {
-		// 	method: 'POST',
-		// 	headers: {
-		// 		'Content-Type': 'application/json',
-		// 	},
-		// 	body: JSON.stringify(userDetails),
-		// })
+		const response = await fetch('http://localhost:1337/api/auth/brandRegister', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(userDetails),
+		})
 
-		// const data = await response.json()
-		// console.log(data.status)
+		const data = await response.json()
+		console.log(data.status)
 
-		// if (data.status === 'ok'){
-		// 	setEmail('')
-		// 	setName('')
-		// 	setPassword('')
-		// 	console.log("User added" ,data.user)
-		// 	navigate("/login")
-		// }
-		// else{
-		// 	console.log("Some error ocurred")
-		// }
+		if (data.status === 'ok'){
+			setEmail('')
+			setName('')
+			setPassword('')
+			console.log("User added" ,data.user)
+			navigate("/login")
+		}
+		else{
+			console.log("Some error ocurred")
+		}
 		
-	// }
+	}
 
 	return (
 		<>

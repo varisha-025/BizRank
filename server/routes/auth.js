@@ -86,10 +86,6 @@ router.post('/brandRegister', async (req, res) => {
       brandContactEmail: req.body.brandContactEmail,
       socialMediaHandles: socialMediavalue,
     });
-    // console.log(addressValue);
-    // newSeller.address = addressValue;
-    // console.log(newSeller);
-    // newSeller.save();
     res.status(200).json({ status: 'ok', seller: newBrand });
   } catch (err) {
     res.status(404).json({ status: 'error', error: err.message });

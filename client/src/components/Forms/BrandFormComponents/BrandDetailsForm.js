@@ -9,7 +9,6 @@ import ImageUpload from './ImageUpload';
 
 function SellerBusinessDetailsForm({ formData, setFormData, page }) {
   const [productCategoriesOptions, setProductCategoriesOptions] = useState([])
-
   const deliveryTimeOptions = [
     "1-2 days",
     "2-3 days",
@@ -33,7 +32,7 @@ function SellerBusinessDetailsForm({ formData, setFormData, page }) {
   }
 
   const fetchProductCategories = () => {
-    fetch("http://localhost:1337/api/sellers/products")
+    fetch("http://localhost:1337/api/brands/products")
       .then(response => {
         return response.json()
       })
@@ -52,8 +51,8 @@ function SellerBusinessDetailsForm({ formData, setFormData, page }) {
         <div className="flex justify-center h-full g-6">
 
           <div className="xl:ml-20 xl:w-3/5 lg:w-2/3 md:w-2/3 mb-12 md:mb-0">
-            <div className="mb-2 flex">
-              {/* <div className='pr-5'>
+            {/* <div className="mb-2 flex">
+              <div className='pr-5'>
                 <Typography variant="h6" className='mb-3'> Brand Logo </Typography>
                 <Button variant="contained" component="label">
                   Upload
@@ -62,8 +61,8 @@ function SellerBusinessDetailsForm({ formData, setFormData, page }) {
               </div>
               <div className="previewBrandLogo" style={{ "height": "170px", "width": "200px" }}>
                <Image src={imgData} easing="ease-in-out" /> 
-              </div>*/}
-            </div> 
+              </div>
+            </div>  */}
                 <ImageUpload/>
             <div className="mb-6">
 
@@ -262,6 +261,8 @@ function SellerBusinessDetailsForm({ formData, setFormData, page }) {
         </div>
       </div>
     </section>
+
+    
   );
 }
 

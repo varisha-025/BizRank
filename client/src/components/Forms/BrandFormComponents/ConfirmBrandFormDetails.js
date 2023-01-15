@@ -4,14 +4,38 @@ import Button from '@mui/material/Button';
 
 
 function ConfirmSellerFormDetails({ formData, setFormData, page }) {
+    async function registerSeller(sellerDetails) {
+        console.log(sellerDetails, "from jhi func")
+        const response = await fetch('http://localhost:1337/api/auth/brandRegister', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body:
+                JSON.stringify(sellerDetails)
+            ,
+        })
+    
+        const data = await response.json()
+        console.log(data.status)
+    
+        if (data.status === 'ok') {
+            console.log("Seller added", data.seller)
+            // navigate("/sellerLogin")
+        }
+        else {
+            console.log("Some error ocurred", data.error)
+        }
+    }
+
     const { name, email, phoneNumber, password, dob, gender, state, city, pincode, brandName, brandDesc, brandWebsite, instagramHandleValue, youtubeChannelValue, facebookHandleValue, paymentOptions, deliveryTime, productCategories, brandContactEmail, brandContactNumber } = formData
     console.log(formData)
     const selllerDetails = { name: name, email: email, password: password, phoneNumber: phoneNumber, dob: dob, gender: gender, address: { state: state, city: city, pincode: pincode }, brandName: brandName, brandDesc: brandDesc, brandWebsite: brandWebsite, socialMediaHandles: { instagram: instagramHandleValue, youtubeChannel: youtubeChannelValue, facebook: facebookHandleValue }, paymentOptions: paymentOptions, deliveryTime: deliveryTime, productCategories: productCategories, brandContactEmail: brandContactEmail, brandContactNumber: brandContactNumber }
     return (
         <section className="h-screen">
             <div className="flex flex-col justify-center items-center  text-gray-800">
-
-                <div className="flex justify-between items-center xl:w-3/5 lg:w-2/3 md:w-2/3 mb-12 md:mb-0">
+                hhiiiii
+                 {/* <div className="flex justify-between items-center xl:w-3/5 lg:w-2/3 md:w-2/3 mb-12 md:mb-0">
                     <List>
                         <div>
                             <Typography variant='h5'> Personal Info</Typography>
@@ -82,9 +106,10 @@ function ConfirmSellerFormDetails({ formData, setFormData, page }) {
                     <List>
                         <div>
                             <Typography variant='h5'> Business Info</Typography>
-                            {/* <ListItem>
-                                    <ListItemText primary="Brand Logo" secondary={brandLogo} />
-                                </ListItem>  */}
+                            <ListItem>
+                                    <ListItemText primary="Brand Logo" secondary={brandLogo} /> 
+                                    hii
+                                </ListItem>  
                             <ListItem>
                                 <ListItemText primary="Brand Name" secondary={
                                         <React.Fragment>
@@ -106,13 +131,7 @@ function ConfirmSellerFormDetails({ formData, setFormData, page }) {
                                         </React.Fragment>
                                     } />
                             </ListItem> 
-                            {/* <ListItem>
-                                    <ListItemText primary="Product Categories" secondary={productCategories} />
-                                </ListItem> */}
-
-                            {/* <ListItem>
-                                    <ListItemText primary="Payment Options available" secondary={paymentOptions} />
-                                </ListItem> */}
+                           
                            <ListItem>
                                 <ListItemText primary="Expected Delivery Time" secondary={
                                         <React.Fragment>
@@ -169,7 +188,8 @@ function ConfirmSellerFormDetails({ formData, setFormData, page }) {
                         </div>
                     </List>
 
-                </div>
+                </div>  */}
+                
 
                 <div className='mt-24 flex justify-center items-center'>
 
@@ -184,7 +204,7 @@ function ConfirmSellerFormDetails({ formData, setFormData, page }) {
                         color="primary"
                         onClick={() => {
                             console.log(selllerDetails)
-                            // registerSeller(selllerDetails)
+                            registerSeller(selllerDetails)
                         }}
                     >
                         Confirm & Submit

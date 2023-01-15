@@ -4,10 +4,10 @@ const Products = require('../models/product.module');
 
 const router = express.Router();
 
-// get all sellers
+// get all brands
 router.get('/', async (req, res) => {
   try {
-    const brands = await Brand.find();
+    const brands = await Brand.find().sort({ brandName: 1 });
     return res.status(200).json(brands);
   } catch (error) {
     res.status(404).json({ error });
