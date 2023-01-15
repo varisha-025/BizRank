@@ -18,11 +18,12 @@ const Dashboard = () => {
     fetchData()
   }, [])
 
+  console.log(brands.length, brands)
+
   return (
 
     <Container sx={{ py: "5rem" }}>
-      
-      {brands.length > 0 && (
+      {brands !== undefined && brands.length > 0 && (
         <ul>
           {brands.map(brand => (
             <BusinessCard key={brand._id} brandName={brand.brandName} paymentOptions={brand.paymentOptions} deliveryTime={brand.deliveryTime} socialMediaHandles={brand.socialMediaHandles} productCategories={brand.productCategories} brandDesc={brand.brandDesc} brandContactEmail={brand.brandContactEmail} brandContactNumber={brand.brandContactNumber} brandLogo={brand.brandLogo} brandWebsite={brand.brandWebsite} />

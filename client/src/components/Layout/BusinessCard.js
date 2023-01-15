@@ -68,7 +68,7 @@ export default function BusinessCard({ brandName, brandDesc, brandLogo, productC
                         What we sell:
                     </Typography>
 
-                    {productCategories.length > 0 && (
+                    {productCategories !== undefined && productCategories.length > 0 && (
                         <ul>
                             {productCategories.map((prod, index) => (
                                 <li key={index}>{prod}</li>
@@ -82,7 +82,7 @@ export default function BusinessCard({ brandName, brandDesc, brandLogo, productC
             <CardContent>
                 <Typography variant='h6'>
                     Payment Options Available:
-                    {paymentOptions.length > 0 && (
+                    {paymentOptions !== undefined && paymentOptions.length > 0 && (
                         <ul>
                             {paymentOptions.forEach((opt, index) => (
                                 <li key={index}>{opt}</li>

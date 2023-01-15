@@ -47,7 +47,7 @@ function SellerForm() {
     youtubeChannelValue: '',
   });
 
-  const FormTitles = ["Personal Info", "Business Info", "Confirm Details", "Success"];
+  const FormTitles = ["Personal Info", "Business Info"];
 
   const PageDisplay = () => {
     // console.log(formData.page)
